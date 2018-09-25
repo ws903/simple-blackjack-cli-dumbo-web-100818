@@ -29,6 +29,7 @@ def initial_round
     num += deal_card
   end
   display_card_total(num)
+  num
 end
 
 def hit?(num)
@@ -47,7 +48,22 @@ end
 # get every test to pass before coding runner below #
 #####################################################
 
+"calls on the #welcome method, 
+  then on the #initial_round method, 
+  then calls #hit? and #display_card_total methods
+  -until- the card sum is greater than 21,
+  then calls on the #end_game method" do
+
 def runner
-  # code runner here
+  welcome
+  card_total = initial_round
+  until card_total > 21
+    card_total = hit?(card_total)
+    display_card_total(card_total)
+  end
+  end_game(card_total)
+end
+  
+  
 end
     
