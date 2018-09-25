@@ -28,6 +28,7 @@ def initial_round
   2.times do
     num += deal_card
   end
+  display_card_total(num)
 end
 
 def hit?
